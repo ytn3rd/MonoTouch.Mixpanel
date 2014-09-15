@@ -40,8 +40,14 @@ namespace MonoTouch.Mixpanel {
 		[Export ("checkForNotificationsOnActive")]
 		bool CheckForNotificationsOnActive { get; set; }
 
+		[Export ("checkForVariantsOnActive")]
+		bool CheckForVariantsOnActive { get; set; }
+
 		[Export ("showNotificationOnActive")]
 		bool ShowNotificationOnActive { get; set; }
+
+		[Export ("miniNotificationPresentationTime")]
+		float MiniNotificationPresentationTime { get; set; }
 
 		[Export ("delegate", ArgumentSemantic.Assign)]
 		MixpanelDelegate Delegate { get; set; }
@@ -49,8 +55,14 @@ namespace MonoTouch.Mixpanel {
 		[Static, Export ("sharedInstanceWithToken:")]
 		Mixpanel SharedInstanceWithToken (string apiToken);
 
+		[Static, Export ("sharedInstanceWithToken:launchOptions:")]
+		Mixpanel SharedInstanceWithToken (string apiToken, NSDictionary launchOption);
+
 		[Static, Export ("sharedInstance")]
 		Mixpanel SharedInstance { get; }
+
+		[Export ("initWithToken:launchOptions:andFlushInterval:")]
+		IntPtr Constructor (string apiToken, NSDictionary launchOptions, uint flushInterval);
 
 		[Export ("initWithToken:andFlushInterval:")]
 		IntPtr Constructor (string apiToken, uint flushInterval);
@@ -63,6 +75,9 @@ namespace MonoTouch.Mixpanel {
 
 		[Export ("track:properties:")]
 		void Track (string eventName, NSDictionary properties);
+
+		[Export ("trackPushNotification:")]
+		void Track (NSDictionary userInfo);
 
 		[Export ("registerSuperProperties:")]
 		void RegisterSuperProperties (NSDictionary properties);
@@ -106,6 +121,9 @@ namespace MonoTouch.Mixpanel {
 		[Export ("showNotification")]
 		void ShowNotification ();
 
+		[Export ("joinExperiments")]
+		void JoinExperiments ();
+
 		[Export ("createAlias:forDistinctID:")]
 		void CreateAlias (string alias, string distinctID);
 
@@ -132,8 +150,8 @@ namespace MonoTouch.Mixpanel {
 		[Export ("set:to:")]
 		void Set (string property, NSObject obj);
 
-		[Export ("once")]
-		NSDictionary Once { set; }
+		[Export ("setOnce:")]
+		void SetOnce (NSDictionary properties);
 
 		[Export ("increment:")]
 		void Increment (NSDictionary properties);
