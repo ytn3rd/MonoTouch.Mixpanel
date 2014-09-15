@@ -1,4 +1,4 @@
-XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+XBUILD=xcodebuild
 PROJECT_ROOT=.
 PROJECT=$(PROJECT_ROOT)/Mixpanel.xcodeproj
 TARGET=Mixpanel
