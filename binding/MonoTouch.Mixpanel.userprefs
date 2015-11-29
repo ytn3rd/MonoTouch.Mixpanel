@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="MonoTouch.Mixpanel.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="libMixpanel.linkwith.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ApiDefinition.cs">
     <Files>
-      <File FileName="ApiDefinition.cs" Line="1" Column="1" />
+      <File FileName="ApiDefinition.cs" Line="57" Column="13" />
       <File FileName="libMixpanel.linkwith.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
